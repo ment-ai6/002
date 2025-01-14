@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>ヤフオク出荷代行サービスのご案内</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+            color: #FF4500;
+        }
+        .reveal section {
+            font-size: 28px;
+        }
+        .reveal .slide-background {
+            background-color: #FFF5EE;
+        }
+        .highlight {
+            color: #FF4500;
+            font-weight: bold;
+        }
+        .price-highlight {
+            font-size: 36px;
+            color: #FF4500;
+            background-color: #FFFF00;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            transform: rotate(-5deg);
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        .user-icon::before {
+            content: '👤';
+            margin-right: 5px;
+        }
+        .service-icon::before {
+            content: '🏢';
+            margin-right: 5px;
+        }
+        .text-left {
+            text-align: left;
+        }
+        .price-table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            font-size: 24px;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .price-table th {
+            background-color: #FF4500;
+            color: white;
+        }
+        .price-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .indent {
+            margin-left: 20px;
+        }
+        .highlight-box {
+            background-color: #FFFF00;
+            color: #FF4500;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 32px;
+            margin: 10px 0;
+        }
+        .reason-box {
+            display: flex;
+            justify-content: space-between;
+        }
+        .reason-text {
+            width: 65%;
+        }
+        .reason-image {
+            width: 30%;
+            align-self: center;
+        }
+        .reason-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .service-flow {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .flow-item {
+            border: 2px solid #FF4500;
+            border-radius: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+        .flow-item h3 {
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        .flow-item img {
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+        .flow-item p {
+            font-size: 24px;
+            margin: 5px 0;
+        }
+        .highlight { color: #FF4500; font-weight: bold; }
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .pain-point {
+            background-color: #FFEBE5;
+            border: 2px solid #FF4500;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .pain-point-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .pain-point h4 {
+            color: #FF4500;
+            margin: 0;
+        }
+        .pain-point ul {
+            font-size: 0.8em;
+            padding-left: 20px;
+            text-align: left;
+            margin: 0;
+        }
+        .illustration {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+        .testimonial-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+        .testimonial-stats {
+            width: 45%;
+            background-color: #FFF5EE;
+            border: 2px solid #FF4500;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .testimonial-image {
+            width: 50%;
+            height: 300px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .testimonial-image p {
+            font-style: italic;
+            color: #888;
+        }
+        .speech-bubble {
+            position: relative;
+            right: -20px;
+            bottom: 10px;
+            background: #FF4500;
+            border-radius: .4em;
+            padding: 15px;
+            color: white;
+            font-size: 28px;
+            margin-top: 30px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .speech-bubble:after {
+          content: '';
+          position: absolute;
+          bottom: 100%;
+          left: 60%;
+          border: 10px solid transparent;
+          border-bottom-color: #FF4500;
+          transform: translateX(-50%);
+        }
+        .result-number {
+            font-size: 36px;
+            color: #FF4500;
+            font-weight: bold;
+        }
+        .price-plan {
+            background-color: #FFF5EE;
+            padding: 20px;
+        }
+        .price-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .monthly-fee {
+            background-color: yellow;
+            padding: 10px;
+            transform: rotate(-5deg);
+        }
+        .fee {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .campaign {
+            font-size: 28px;
+            color: #FF4500;
+        }
+        .plus-sign {
+            font-size: 36px;
+        }
+        .per-request {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .fee-table {
+            width: 80%;
+        }
+        .payback-example {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .price-plan {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .price-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .price-box {
+            text-align: center;
+            padding: 20px;
+            margin: 0 20px;
+            border: 3px solid #FF4500;
+            border-radius: 10px;
+        }
+        .price-title {
+            font-size: 1.5em;
+            color: #FF4500;
+            margin-bottom: 10px;
+        }
+        .price-value {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .plus-sign {
+            font-size: 3em;
+            color: #FF4500;
+            margin: 0 20px;
+        }
+        .price-note {
+            font-size: 1.2em;
+            color: #FF4500;
+            margin-top: 20px;
+        }
+        .fee-table {
+            font-size: 0.8em;
+            margin-top: 20px;
+        }
+        .fee-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .fee-table th, .fee-table td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: center;
+        }
+        .fee-table th {
+            background-color: #FF4500;
+            color: white;
+        }
+        .payback-example {
+            background-color: #FFF5EE;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .payback-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #FF4500;
+        }
+        .payback-detail {
+            font-size: 1em;
+        }
+        .highlight {
+            color: #FF4500;
+            font-weight: bold;
+        }
+        .price-plan {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .price-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .price-box {
+            text-align: center;
+            padding: 20px;
+            margin: 0 20px;
+            border: 3px solid #FF4500;
+            border-radius: 10px;
+        }
+        .price-title {
+            font-size: 1.5em;
+            color: #FF4500;
+            margin-bottom: 10px;
+        }
+        .price-value {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .plus-sign {
+            font-size: 3em;
+            color: #FF4500;
+            margin: 0 20px;
+        }
+        .price-note {
+            font-size: 1.2em;
+            color: #FF4500;
+            margin-top: 20px;
+        }
+        .price-details {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .payback-example {
+            width: 60%;
+            background-color: #FFF5EE;
+            padding: 15px;
+            text-align: left;
+        }
+        .payback-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #FF4500;
+            text-decoration: underline;
+        }
+        .payback-detail {
+            font-size: 0.9em;
+        }
+        .fee-table {
+            width: 30%;
+            font-size: 0.5em;
+        }
+        .fee-table table {
+            width: 80%;
+            border-collapse: collapse;
+        }
+        .fee-table th, .fee-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .fee-table th {
+            background-color: #FF4500;
+            color: white;
+        }
+        .highlight {
+            color: #FF4500;
+            font-weight: bold;
+        }
+        .fee-table-title {
+            font-weight: bold;
+            color: #FF4500;
+            margin-bottom: 10px;
+        }
+        .additional-note {
+            font-size: 0.9em;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .reveal .slides section .qa-section {
+            text-align: left;
+            font-size: 0.9em;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .qa-item {
+            margin-bottom: 20px;
+        }
+        .qa-item p {
+            text-align: left;
+            margin: 0;
+        }
+        .question {
+            font-weight: bold;
+            color: #FF4500;
+        }
+        .final-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .details-link {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #FF4500;
+        }
+        .details-link a {
+            color: #FF4500;
+            text-decoration: underline;
+        }
+        .final-image {
+            max-width: 100%;
+            height: 256px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1 style="font-size: 60px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">ヤフオク出荷代行サービスのご案内</h1>
+                <h3>AI画像物販を加速しませんか</h3>
+                <p style="font-size: 72px;">🚀🍣</p>
+                <h4>※本資料は生成AIを駆使して作成しました♪</h4>
+            </section>
+
+            <section>
+                <h2>ヤフオクAI画像物販の悩み</h2>
+                <h3>あなたもこんな悩み抱えてませんか？</h3>
+                <div class="pain-points">
+                    <div class="pain-point">
+                        <div class="pain-point-header">
+                            <h4>1. 時間がかかる作業の山</h4>
+                            <span class="illustration">⏰</span>
+                        </div>
+                        <ul>
+                            <li>画像の印刷に時間と手間</li>
+                            <li>丁寧な梱包作業に神経を削る</li>
+                            <li>発送手続きに時間を取られる</li>
+                        </ul>
+                    </div>
+                    <div class="pain-point">
+                        <div class="pain-point-header">
+                            <h4>2. 資材管理に憂鬱</h4>
+                            <span class="illustration">📦</span>
+                        </div>
+                        <ul>
+                            <li>資材の管理・作業場所の確保</li>
+                            <li>小ロットの資材購入は割高</li>
+                            <li>印刷用紙・梱包材の在庫管理</li>
+                        </ul>
+                    </div>
+                    <div class="pain-point">
+                        <div class="pain-point-header">
+                            <h4>3. スケーリングの壁</h4>
+                            <span class="illustration">📈</span>
+                        </div>
+                        <ul>
+                            <li>作業量の増加が重荷に</li>
+                            <li>一人で対応できる量に限界</li>
+                            <li>資材・作業場所が必要に</li>
+                        </ul>
+                    </div>
+                    <div class="pain-point">
+                        <div class="pain-point-header">
+                            <h4>4. 本業や私生活への影響</h4>
+                            <span class="illustration">💦</span>
+                        </div>
+                        <ul>
+                            <li>新規出品や戦略立案の時間減</li>
+                            <li>プライベート時間がなくなる</li>
+                            <li>何のために稼いでいるのか...</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="color: #FF4500; font-weight: bold; margin-top: 20px;">⇒出荷作業に疲弊... 出品作業やプライベートの時間がなくなる😢</p>
+            </section>
+            
+            <section>
+                <h2>出荷代行を始めて驚異の実績！</h2>
+                <div class="testimonial-content">
+                    <div class="testimonial-stats">
+                        <p>8/23: <span class="result-number">150</span> 件</p>
+                        <p>8/24: <span class="result-number">163</span> 件</p>
+                        <p style="font-size: 24px; margin-top: 20px;">⇒ 2日間で <span class="result-number">8万円</span>近くの利益！</p>
+                    </div>
+                    <div class="testimonial-image">
+                        <img src="https://github.com/ment-ai6/001/blob/main/jisseki2.jpg?raw=true">
+                    </div>
+                </div>
+                <div class="speech-bubble">
+                    出荷代行のおかげで別事業や継続した出品作業ができる♪
+                </div>
+            </section>
+
+            <section>
+                <h2>サービスの概要</h2>
+                <h3>ユーザーは依頼だけ！印刷～発送まで代行してくれる！</h3>
+                <div class="service-flow">
+                    <div class="flow-item">
+                        <h2>1. 代行依頼</h2>
+                        <img src="https://raw.githubusercontent.com/ment-ai6/001/1a1fc09165dcf4d492bc1616ecdc9b4dda077da1/1.jpg" alt="代行依頼の様子">
+                        <p>👤 落札後、画像データとQRコードを連絡</p>
+                    </div>
+                    <div class="flow-item">
+                        <h2>2. 印刷作業</h2>
+                        <img src="https://raw.githubusercontent.com/ment-ai6/001/main/2.JPEG" alt="印刷作業の様子">
+                        <p>🏢 Canon純正光沢紙に高品質印刷</p>
+                    </div>
+                    <div class="flow-item">
+                        <h2>3. 梱包作業</h2>
+                        <img src="https://raw.githubusercontent.com/ment-ai6/001/main/3.JPEG" alt="梱包作業の様子">
+                        <p>🏢 ダンボール板とOPP袋で丁寧に梱包</p>
+                    </div>
+                    <div class="flow-item">
+                        <h2>4. 発送作業</h2>
+                        <img src="https://raw.githubusercontent.com/ment-ai6/001/main/4%20(2).JPEG" alt="発送作業の様子">
+                        <p>🏢 発送完了後、ユーザーに報告</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>背景と利益以外の強い思い</h2>
+                <div class="reason-box">
+                    <div class="reason-text">
+                        <ol>
+                            <li><span class="highlight">社会的課題への対応</span>
+                                <ul>
+                                    <li>2024年4月の制度改定で就労継続支援A型事業所が苦境</li>
+                                    <li>3ヶ月で329カ所閉鎖、5,000人以上の障害者が職を失う</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">新たな雇用機会の創出</span>
+                                <ul>
+                                    <li>障害者の雇用を増やすための新事業</li>
+                                    <li>みらいわーく様との協力で実現</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">三方よしの実現</span>
+                                <ul>
+                                    <li>ユーザー：作業負担軽減、売上向上</li>
+                                    <li>事業所　：安定した運営</li>
+                                    <li>障害者　：継続的な雇用機会</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="reason-image">
+                        <img src="https://raw.githubusercontent.com/ment-ai6/001/main/miraiwork.jpg" alt="みらいわーく">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>募集条件</h2>
+                <div class="text-left">
+                    <p>スタート直後のため、今回は<strong>限定募集</strong>ですm(__)m</p>
+                    <ul>
+                        <li>募集人数: <div class="highlight-box">5人限定</div></li>
+                        <li>対象者　: <div class="highlight-box">ヤフオクでのAI画像物販の経験者</div></li>
+                    </ul>
+                    <p>　　※今後、設備投資・提携先増加により受入れ人数を増やす予定。</p>
+                    <p>　　　初心者の方は次回以降の募集をお待ち願います。</p>
+                </div>
+            </section>
+
+            <section class="price-plan">
+                <h2>料金体系</h2>
+                <div class="price-note">印刷経費、梱包資材費などすべてコミコミ！</div>
+                    <div class="price-main">
+                    <div class="price-box">
+                        <div class="price-title">月額</div>
+                        <div class="price-value">4,980円</div>
+                        <div>サービス開始限定価格</div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="price-box">
+                        <div class="price-title">代行費</div>
+                        <div class="price-value">150円/件～</div>
+                        <div>1枚追加ごとに+80円</div>
+                    </div>
+                </div>
+                <div class="price-details">
+                    <div class="payback-example">
+                        <div class="payback-title">月額費はすぐに回収できる！</div>
+                        <div class="payback-detail">
+                            <span class="highlight">　単価300円</span>で<span class="highlight">まとめて5枚</span>の場合、<br>
+                            　代行費加味しても<span class="highlight">6件</span>で月額費をペイ！<br>
+                            　(1件あたり利益833円にて算出)<br>
+                            　　※月額費は税込、代行費は税抜価格
+                        </div>
+                    </div>
+                    <div class="fee-table">
+                        <p class="fee-table-title">梱包1件当たりの金額表</p>
+                        <table>
+                            <tr><th>枚数</th><th>代行費（税抜）</th></tr>
+                            <tr><td>1</td><td>¥150</td></tr>
+                            <tr><td>2</td><td>¥230</td></tr>
+                            <tr><td>3</td><td>¥310</td></tr>
+                            <tr><td>…</td><td>…</td></tr>
+                            <tr><td>20</td><td>¥1,670</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <p class="additional-note">※月額費からプリンタや備品購入費、人材育成のための人件費などに充てます</p>
+            </section>
+
+            <section>
+                <h2>注意点</h2>
+                <ul>
+                    <li>原則、依頼を受けた翌営業日に発送(土日祝休業)</li>
+                    <li>みらいわーく様の稼働上限を超過する場合、遅延する可能性あり</li>
+                    <li>サービス開始直後のため、直近は細かなルール変更が発生するかもしれません。</li><br>
+                    あらかじめご了承ください。
+                </ul>
+                <p style="font-size: 72px;">📦</p>
+            </section>
+            
+            <section>
+                <h2>Q&A</h2>
+                <div class="qa-section">
+                    <div class="qa-item">
+                        <p class="question">Q.ユーザーは売れた画像とQRを用意するだけ？</p>
+                        <p>A. はい、その通りです！</p>
+                    </div>
+                    <div class="qa-item">
+                        <p class="question">Q.インク代やプリンター代はどうなるの？</p>
+                        <p>A. インク代などの消耗品は代行費、プリンタなどの備品は月額費で充当。</p>
+                        <p>　ですので、月額費+代行費以上のご負担額は発生しません！</p>
+                        <p>　（補足:月額費から人材育成にかかる人件費も充てる予定です。）</p>
+                    </div>
+                    <div class="qa-item">
+                        <p class="question">Q. 光沢紙やプリンター、インクの指定はできるのでしょうか？</p>
+                        <p>A. 個別対応は厳しいため、指定できません。</p>
+                        <p>　同様の理由で梱包方法も指定できません。</p>
+                    </div>
+                    <div class="qa-item">
+                        <p class="question">Q. アダルトOKでしょうか</p>
+                        <p>A. アダルトOKです！</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>あなたにとって自由な時間を</h2>
+                <img src="https://raw.githubusercontent.com/ment-ai6/001/main/free%20man2.webp" alt="自由な時間" class="final-image">
+                <div class="details-link">
+                    <a href="https://docs.google.com/document/d/1qZT8V4SxTd1c5HQN_qBdaXo7otAp_NJr5dg55sADA4U/edit?usp=sharing"_blank">✅詳細はこちら</a><br>
+                    <a href="https://forms.gle/WhRV68HyiqhvooTw7" target="_blank">✉応募はこちらから</a>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize();
+    </script>
+</body>
+</html>
